@@ -1,7 +1,10 @@
 import 'dart:ui';
 
+import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
+import 'package:ticket_app/base/res/styles/media.dart';
+import 'package:ticket_app/base/widgets/app_double_text.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -14,6 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppStyles.backgroundColor,
       body: ListView(
         children: [
           Container(
@@ -45,20 +49,36 @@ class _HomeScreenState extends State<HomeScreen> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         image: const DecorationImage(
-                          image: AssetImage("assets/assets/images/logo.png")
+                          image: AssetImage(AppMedia.logo)
 
                         )
                       ),
                     ),
                   ],
                 ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [Text("Search icon"), Text("Empty space")],
+                const SizedBox(height: 25,),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: const Color(0xFFF4F6FD),
+
+                    ),
+                  child: const Row(
+                    children: [
+                      SizedBox(height: 40,),
+                      Icon(FluentSystemIcons.ic_fluent_search_regular, color: Color(0xFFBFC205),),
+                      Text("Search icon")
+                    ],
+                  ),
                 ),
+                const SizedBox(height: 40,),
+                const AppDoubleText(bigText: "Upcoming Flights", smallText: "View all"),
               ],
             ),
+
           ),
+
         ],
       ),
     );
