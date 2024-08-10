@@ -1,8 +1,7 @@
 import 'dart:ui';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:ticket_app/base/res/styles/app_styles.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -24,30 +23,32 @@ class _HomeScreenState extends State<HomeScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Column(
+                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           "Good Morning",
-                          style: TextStyle(
-                              fontSize: 17, fontWeight: FontWeight.w500),
+                          style: AppStyles.headLineStyle3,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                         Text(
                           "Book Tickets",
-                          style: TextStyle(
-                              color: Color(0xFF3B3B3B),
-                              fontSize: 25,
-                              fontWeight: FontWeight.w500),
+                          style: AppStyles.headLineStyle2,
                         )
                       ],
                     ),
                     Container(
-                      width: 100,
-                      height: 70,
-                      color: Colors.red,
+                      width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: const DecorationImage(
+                          image: AssetImage("assets/assets/images/logo.png")
+
+                        )
+                      ),
                     ),
                   ],
                 ),
