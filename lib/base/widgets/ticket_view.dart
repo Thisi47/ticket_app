@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
 import 'package:ticket_app/base/widgets/app_layoutbuilder_widget.dart';
+import 'package:ticket_app/base/widgets/big_circular.dart';
 import 'package:ticket_app/base/widgets/big_dot.dart';
 
 class TicketView extends StatelessWidget {
@@ -101,8 +102,14 @@ class TicketView extends StatelessWidget {
               ),
             ),
             Container(
-              height: 20,
               color: AppStyles.ticketOrange,
+              child: Row(
+                children: [
+                  const BigCircular(isRight: true,),
+                  Expanded(child: Container()),
+                  const BigCircular(isRight: false,),
+                ],
+              ),
             ),
             Container(
              padding: const EdgeInsets.all(16),
