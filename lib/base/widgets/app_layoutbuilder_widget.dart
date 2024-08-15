@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class AppLayoutBuilderWidget extends StatelessWidget {
-  const AppLayoutBuilderWidget({super.key, required this.randomDivider});
+  const AppLayoutBuilderWidget({super.key, required this.randomDivider, this.width = 3});
   final int randomDivider;
+  final double width;
 
 
   @override
@@ -12,15 +13,16 @@ class AppLayoutBuilderWidget extends StatelessWidget {
       return Flex(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         direction: Axis.horizontal,
-        children: List.generate((contraints.constrainWidth()/randomDivider).floor(), (index) =>const SizedBox(
-          width: 3,
-          height: 1,
-          child: DecoratedBox(
-            decoration:BoxDecoration(
-              color: Colors.white,
-            ),
-          )
-        )
+        children: List.generate((contraints.constrainWidth()/randomDivider).floor(), (index) =>
+            SizedBox(
+              width: width,
+              height: 1,
+              child: const DecoratedBox(
+                decoration:BoxDecoration(
+                  color: Colors.white,
+                ),
+              )
+            )
         )
       );
     });
