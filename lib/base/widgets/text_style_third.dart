@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import '../res/styles/app_styles.dart';
 
 class TextStyleThird extends StatelessWidget {
-  const TextStyleThird({super.key, required this.text});
+  final bool? isColor;
+  const TextStyleThird({super.key, required this.text, this.isColor});
   final String text;
 
   @override
@@ -12,7 +13,7 @@ class TextStyleThird extends StatelessWidget {
     return Text(
       text,
       style: AppStyles.headLineStyle3.copyWith(
-          color: Colors.white
+          color: isColor==null?AppStyles.whiteColor:AppStyles.blackColor
       ),
     );
   }
